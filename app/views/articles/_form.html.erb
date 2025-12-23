@@ -1,27 +1,26 @@
-<%= form_with(model: article) do |form| %>
-  <% if article.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-      <ul>
-        <% article.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+<% if @article.errors.any? %>
+    <h2>The following erros prevented the article from being saved </h2>
+    <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %> </li>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
+    </ul>
+<% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.textarea :description %>
-  </div>
+<%= form_with(model:@article,local: true) do |f| %>
 
-  <div>
-    <%= form.submit %>
-  </div>
+<p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+</p>
+<br/>
+<p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+</p>
+<br/>
+<p>
+    <%= f.submit %>
+</p>
 <% end %>
