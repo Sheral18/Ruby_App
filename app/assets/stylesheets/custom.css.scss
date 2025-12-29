@@ -1,0 +1,49 @@
+/* @import "bootstrap/dist/css/bootstrap"; */
+@import "bootstrap";
+
+.navbar {
+    background-color: purple;
+}
+
+h1 {
+    color: red;
+}
+
+
+.nav-link {
+    color: purple !important;
+}
+
+#home-container {
+    margin-top: 25px;
+}
+
+#nav {
+    background-color: purple;
+}
+
+#photo {
+    background-image: asset-url("jumbo_copy.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#page-content {
+    flex: 1 0 auto;
+    background-color: lightgray;
+}
+
+#sticky-footer {
+    flex-shrink: 0;
+}
